@@ -1,15 +1,32 @@
-const table = document.getElementsByTagName('table')
+const table = document.querySelector("table");
 
-function makeRow () {
-  const tr = document.createElement('tr')
-  table[0].appendChild(tr)
+function makeRow() {
+  const tr = document.createElement("tr");
+  table.appendChild(tr);
   for (let i = 0; i < 20; i++) {
-    const td = document.createElement('td')
-    tr.appendChild(td)
+    const td = document.createElement("td");
+    tr.appendChild(td);
   }
 }
 
-const button = document.getElementById('add-row')
+function colorize(ev) {
+  if (ev.target.className !== "table") {
+    if (ev.target.className.length) {
+      ev.target.className = "";
+    } else {
+      ev.target.className = selector.value;
+    }
+  }
+}
 
-button.addEventListener('click', makeRow)
+const button = document.getElementById("add-row");
 
+button.addEventListener("click", makeRow);
+
+table.addEventListener("click", colorize);
+
+const selector = document.querySelector("select");
+
+selector.addEventListener("change", function (event) {
+  console.log(event.target.value);
+});
