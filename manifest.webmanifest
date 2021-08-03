@@ -1,0 +1,28 @@
+{
+  "name": "Clock",
+  "short_name" : "Clock",
+  "start_url": "/",
+  "display" : "standalone",
+  "background_color" : "#000000",
+  "theme_color" : "#000000",
+  "description" : "A simple clock",
+  "prefer_related_applications" : true,
+  "icons": [
+    {
+      "src": "/small_clock.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/big_clock.png",
+      "sizes": "225x225",
+      "type": "image/png"
+    },
+    {
+      "src": "/bigger_clock.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

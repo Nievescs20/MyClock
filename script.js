@@ -1,32 +1,42 @@
-const table = document.querySelector("table");
+// Your code here
 
-function makeRow() {
-  const tr = document.createElement("tr");
-  table.appendChild(tr);
-  for (let i = 0; i < 20; i++) {
-    const td = document.createElement("td");
-    tr.appendChild(td);
+function showTime() {
+  var date = new Date();
+  var h = date.getHours();
+  var m = date.getMinutes();
+  var s = date.getSeconds();
+  var session = 'AM';
+
+  if (h == 0) {
+    h = 12;
+  }
+
+  if (h > 12) {
+    h = h - 12;
+    session = 'PM';
+  }
+
+  h = h < 10 ? '0' + h : h;
+  m = m < 10 ? '0' + m : m;
+  s = s < 10 ? '0' + s : s;
+
+  var time = h + ':' + m + ':' + s + ' ' + session;
+  document.getElementById('MyClockDisplay').innerText = time;
+  document.getElementById('MyClockDisplay').textContent = time;
+
+  setTimeout(showTime, 1000);
+}
+
+function registerSW() {
+  if ('serviceWorker' in navigator) {
+    showTime();
+    navigator.serviceWorker
+      .register('./sw.js')
+      .then((reg) => console.log('Service Worker: Registered'))
+      .catch((err) => console.log(`Service Worker: Error ${err}`));
   }
 }
 
-function colorize(ev) {
-  if (ev.target.className !== "table") {
-    if (ev.target.className.length) {
-      ev.target.className = "";
-    } else {
-      ev.target.className = selector.value;
-    }
-  }
-}
-
-const button = document.getElementById("add-row");
-
-button.addEventListener("click", makeRow);
-
-table.addEventListener("click", colorize);
-
-const selector = document.querySelector("select");
-
-selector.addEventListener("change", function (event) {
-  console.log(event.target.value);
+window.addEventListener('load', () => {
+  registerSW();
 });

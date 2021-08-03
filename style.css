@@ -1,41 +1,14 @@
-* {
-  box-sizing: border-box;
-  font-family: "Press Start 2P", cursive;
-}
-
-html {
-  background-color: #222;
-  color: white;
-}
-
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-td {
-  width: 50px;
-  height: 50px;
-  background-color: lightgray;
+  background: black;
 }
 
-.green {
-  background-color: green;
+.clock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  color: #8d31e4;
+  font-size: 60px;
+  font-family: Chalkduster, fantasy;
+  letter-spacing: 8px;
 }
-
-.blue {
-  background-color: blue;
-}
-
-.orange {
-  background-color: orange;
-}
-
-.yellow {
-  background-color: yellow;
-}
-
-.red {
-  background-color: red;
-}
-/* your CSS below! */

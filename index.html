@@ -1,31 +1,17 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Pixelate</title>
-    <!-- This gets us our fun 8-bit font from Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Press+Start+2P"
-      rel="stylesheet"
-    />
-
-    <!-- loads our own CSS file -->
-    <link rel="stylesheet" href="/style.css" />
-  </head>
-  <body>
-    <h1>Pixelate</h1>
-    <div>
-      <button id="add-row">Add a row</button>
-      <select>
-        <!-- add options here! -->
-        <option value="red">RED</option>
-        <option value="green">Green</option>
-        <option value="blue">Blue</option>
-        <option value="orange">Orange</option>
-        <option value="yellow">Yellow</option>
-      </select>
-    </div>
-    <table class="table"></table>
-  </body>
-  <!-- loads our JavaScript file -->
-  <script type="text/javascript" src="/script.js"></script>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000"/>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/small_clock.png">
+  <title>My Clock</title>
+</head>
+<body>
+  <div id="MyClockDisplay" class="clock"></div>
+  <script defer src="/script.js"></script>
+</body>
 </html>
