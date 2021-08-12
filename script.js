@@ -5,7 +5,7 @@ function showTime() {
   let h = date.getHours();
   let m = date.getMinutes();
   let s = date.getSeconds();
-  let session = "PM";
+  let session = "AM";
   console.log(date);
 
   if (h == 0) {
@@ -13,7 +13,7 @@ function showTime() {
   }
 
   if (h > 12) {
-    session = "AM";
+    session = "PM";
     h = h - 12;
   }
 
@@ -23,7 +23,7 @@ function showTime() {
 
   let time = h + ":" + m + ":" + s + " " + session;
   document.getElementById("MyClockDisplay").innerText = time;
-  document.getElementById("MyClockDisplay").textContent = time;
+  // document.getElementById("MyClockDisplay").textContent = time;
 
   setTimeout(showTime, 1000);
 }
